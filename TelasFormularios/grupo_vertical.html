@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo de Botões com Redirecionamento</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Telas de Formulário</h2>
+        <div class="row">
+            <div class="col-sm-4 full-height" style="background-color: #ffffff;">
+                <p>Grupo de Botões Verticais</p>
+                <img src="media/Formularios.png" alt="home-img" width="100%">
+            </div>
+            <div class="col-sm-8">
+                <div class="btn-group-vertical" role="group" aria-label="Grupo de Botões">
+                    <button id="btnGroup1" type="button" class="btn btn-primary" onclick="handleClick('index.html', 'alert1')">
+                        Tela 1
+                    </button>
+                    <div id="alert1" class="alert alert-success d-none mt-3" role="alert">
+                        Redirecionando para a página de Botões com Dropdown.
+                    </div>
+
+                    <button id="btnGroup2" type="button" class="btn btn-primary" onclick="handleClick('grupo_botoes.html', 'alert2')">
+                        Tela 2
+                    </button>
+                    <div id="alert2" class="alert alert-danger d-none mt-3" role="alert">
+                        Redirecionando para a página de Grupo de Botões.
+                    </div>
+
+                    <button id="btnGroup3" type="button" class="btn btn-primary" onclick="handleClick('grupo_vertical.html', 'alert3')">
+                        Tela 3
+                    </button>
+                    <div id="alert3" class="alert alert-warning d-none mt-3" role="alert">
+                        Redirecionando para a página atual mesmo.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function handleClick(url, alertId) {
+            // Mostrar o alerta
+            var alertContainer = document.getElementById(alertId);
+            alertContainer.classList.remove('d-none');
+            
+            // Redirecionar após 2 segundos
+            setTimeout(function() {
+                location.href = url;
+            }, 2200);
+        }
+    </script>
+</body>
+</html>
